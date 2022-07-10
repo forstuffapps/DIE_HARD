@@ -6,7 +6,6 @@ from pikepdf import Pdf
 def merge_pdfs(n, name):
     pdf = Pdf.new()
 
-    n = 2  # number of files
 
     for i in range(1, n + 1):  # you can change this to browse directories recursively
 
