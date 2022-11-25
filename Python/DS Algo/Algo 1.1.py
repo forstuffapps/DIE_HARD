@@ -125,4 +125,26 @@ def from_end(l,n):
 
 ######################################################################################
 
+'''
 
+Sieve_of_Eratosthenes
+for generating prime numbers
+ideally we generate 10**6
+'''
+
+
+def Sieve_of_Eratosthenes(n):
+    #n=10**6+1
+
+    l=[0]*n
+    p=[]
+
+    for i in range(2,n):
+        
+        if l[i]==0:
+            p.append(i)
+            j=i*i
+            while j<n:
+                l[j]=1
+                j+=i
+    return p
