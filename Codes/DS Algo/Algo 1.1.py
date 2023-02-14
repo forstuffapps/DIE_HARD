@@ -126,7 +126,6 @@ def from_end(l,n):
 ######################################################################################
 
 '''
-
 Sieve_of_Eratosthenes
 for generating prime numbers
 ideally we generate 10**6
@@ -148,3 +147,50 @@ def Sieve_of_Eratosthenes(n):
                 l[j]=1
                 j+=i
     return p
+
+
+
+'''
+Insertion Sort
+SI Prac : Insertion Sort Adhoc, Page-4 : 10, 
+'''
+
+n=lambda:map(int,input().split())
+t=[*n(),][0]
+while t>0:
+    m=[*n(),][0]
+    l=[*n()]
+    z=0
+    for i in range(1,m):
+        k=l[i]
+        j=i-1
+        while j>=0 and k<l[j] : 
+                l[j+1]=l[j] 
+                j-=1
+        l[j+1]=k
+        print(j+1,end=' ')
+    print()
+    t-=1
+
+
+
+'''
+A power B
+SI Prac : Compute a power b , Page-3 : 3, 
+APT : Day-3,
+'''
+
+g=1000000007
+n=lambda:map(int,input().split())
+t=[*n(),][0]
+while t>0:
+    a,b=[*n(),]
+    x=a
+    ans=1
+    while(b!=0):
+        if b&1:
+            ans=(ans*x)%g
+        x=(x*x)%g
+        b=b>>1
+    print(ans%g)
+    t-=1
