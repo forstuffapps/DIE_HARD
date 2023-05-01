@@ -5,6 +5,8 @@ u=lambda:map(int,input().split())
     Maximum Product Subarray
     TC : O(N)
     SC : O(N)
+    YouTube Link : https://www.youtube.com/watch?v=vtJvbRlHqTA
+    [-1, 6, 2, 0, 7, 9]
 '''
 
 def max_prdt_subarr():
