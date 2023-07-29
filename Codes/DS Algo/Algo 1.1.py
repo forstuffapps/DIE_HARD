@@ -196,3 +196,33 @@ while t>0:
         b=b>>1
     print(ans%g)
     t-=1
+
+
+
+
+def GCD(a,b):
+    while b:
+        a,b=b,a%b
+    return a
+
+
+
+'''
+Tower of Hanoi
+All sorting Algos[SS, IS, BS, MS, HS]
+Merge A into B
+2 pointer
+Binary Search
+Floor and Ciel of Binary Search
+Max subarray SUM
+Max non decreasing subarray
+Max subarray that is contigious after rearranging w & wt (with & without) duplicates
+Distinct elements in a window
+Palindrome w & wt DP
+Max subarray containing equal no of 0's and 1's
+Given rotated array find K
+K-rotated array convert to reg array
+Builiding water
+
+
+'''
