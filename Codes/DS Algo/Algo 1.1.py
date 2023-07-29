@@ -207,6 +207,32 @@ def GCD(a,b):
 
 
 
+
+'''
+Collecting Water (or) Builiding water
+SI Prac : Page-10 : 10
+'''
+
+def collecting_water(l):
+    n=len(l)
+    ML=[l[0]]
+    for i in range(1,n):
+        ML.append(max(ML[-1],l[i]))
+    MR=[0]*n
+    MR[-1]=l[-1]
+    for i in range(n-2,-1,-1):
+        MR[i] = max(MR[i+1],l[i])
+    
+    z=0
+    for i in range(1,n-1):
+        z+=min(ML[i],MR[i])-l[i]
+    
+    return z
+
+
+
+
+
 '''
 Tower of Hanoi
 All sorting Algos[SS, IS, BS, MS, HS]
@@ -222,7 +248,7 @@ Palindrome w & wt DP
 Max subarray containing equal no of 0's and 1's
 Given rotated array find K
 K-rotated array convert to reg array
-Builiding water
+
 
 
 '''
