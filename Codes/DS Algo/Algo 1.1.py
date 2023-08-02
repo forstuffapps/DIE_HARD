@@ -200,6 +200,27 @@ while t>0:
 
 
 
+'''
+Sum of XOR of Pairs
+SI Prac : Sum of XOR of pairs, Page-3 : 8,
+APT : Phase-2, Day-1
+'''
+
+def sun_of_xor_of_pairs(l):
+    g=10**9+7
+    z=0
+    n=len(l)
+    for b in range(32):
+        c=0
+        for i in range(n):
+            c+=l[i]&1
+            l[i]>>=1
+        
+        z+=c*(n-c)*2**b
+    
+    return (2*z)
+
+
 def GCD(a,b):
     while b:
         a,b=b,a%b
