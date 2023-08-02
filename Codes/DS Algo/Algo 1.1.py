@@ -236,6 +236,7 @@ def collecting_water(l):
 '''
 Tower of Hanoi
 All sorting Algos[SS, IS, BS, MS, HS]
+Merge sort
 Merge A into B
 2 pointer
 Binary Search

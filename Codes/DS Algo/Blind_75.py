@@ -99,3 +99,25 @@ def lengthOfLIS(nums):
         dp[i]=m+1
     #print(dp)
     return max(dp)
+
+
+
+
+"""
+3. Longest Common Subsequence  (LC number - 1143)
+"""
+
+#  Recursion 
+def longestCommonSubsequence(text1, text2):
+    n,m=len(text1), len(text2)
+    A,B = text1, text2
+    @lru_cache(maxsize=None)
+    def z(A,B, n, m):
+        if n==0 or m==0:
+            return 0
+        if A[n-1]==B[m-1]:
+            return 1+z(A,B,n-1,m-1)
+        else:
+            return max(z(A,B,n-1,m), z(A,B,n,m-1))
+    
+    return z(A,B,n,m)
