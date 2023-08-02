@@ -8,7 +8,7 @@ from functools import *
 1. Climbing Stairs (LC number - 70)
 """
 
-# Tabulation : Top-Down Approach
+# Tabulation : Bottom-Up Approach
 def climbStairs(n):
     dp=[0]*(n+1)
     dp[0],dp[1]=1,1
@@ -18,7 +18,7 @@ def climbStairs(n):
     return dp[n]
 
 
-# Recursive : Bottom-Up Approach
+# Recursive : Top-Down Approach
 def climbStairs(n):
     @lru_cache(maxsize=None)
     def z(n):
@@ -56,6 +56,27 @@ def coinChange(coins, amount):
 
 
 
+def coinChange(coins, amount):
+    @lru_cache(maxsize=None)
+    def z(coins,amount):
+        A=amount
+        if A<0:
+            return None
+        if A==0:
+            return 0
+        
+        m=10**9+7
+        n=len(coins)
+        for j in range(n):
+            k=z(coins, A-coins[j])
+            if k!=None:
+                m=min(m,k)
+            
+        return None if m==10**9+7 else m+1
+    
+    k=z(tuple(coins), amount)
+
+    return -1 if k==None else k
 
 
 
