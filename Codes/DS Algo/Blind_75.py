@@ -121,3 +121,22 @@ def longestCommonSubsequence(text1, text2):
             return max(z(A,B,n-1,m), z(A,B,n,m-1))
     
     return z(A,B,n,m)
+
+
+#  Recursion + Memorization
+def longestCommonSubsequence(text1, text2):
+    n,m=len(text1), len(text2)
+    A,B = text1, text2
+    dp=[[0]*(m+1)]*(n+1)
+    @lru_cache(maxsize=None)
+    def z(A,B, n, m):
+
+        if n==0 or m==0:
+            return 0
+        if A[n-1]==B[m-1]:
+            dp[n][m] = 1+z(A,B,n-1,m-1)
+        else:
+            dp[n][m] = max(z(A,B,n-1,m), z(A,B,n,m-1))
+        
+        return dp[n][m]
+    return z(A,B,n,m)
